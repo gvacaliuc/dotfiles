@@ -12,6 +12,7 @@ set hlsearch "Highligts search terms
 set incsearch "Shows search terms as I type
 set history=100 "Remember 100 commands
 set undolevels=100 "Lots of undo levels
+set encoding=utf-8 "UTF8 encoding
 "set hidden "Allow switching from unsaved buffers!
 
 "   Maps ; -> : in normal mode
