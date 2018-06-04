@@ -1,5 +1,4 @@
-#Additions to PATH
-
+# Any additions to PATH
 export PATH=$PATH:~/bin/
 export PATH=$PATH:~/.local/bin
 export GOROOT=~/go
