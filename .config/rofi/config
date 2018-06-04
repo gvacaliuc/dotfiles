@@ -1,0 +1,4 @@
+rofi.theme: .config/rofi/theme.rasi
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e {ssh-client} {host}
+rofi.terminal: i3-sensible-terminal
