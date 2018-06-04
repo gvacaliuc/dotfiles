@@ -3,50 +3,29 @@
 # MIT License
 
 # folder to organize my bashrc
-export CONFIG_DIR="$HOME/.config/bash"
+export BASH_CONFIG_DIR="$HOME/.config/bash"
 
-#   Get initial config stuff
-INITIAL_CONFIG=$CONFIG_DIR/bash.d/init_config.bash
-if [[ -f $INITIAL_CONFIG ]]
-then
-    source $INITIAL_CONFIG
-fi
+function __load_file { [ -s "$1" ] && source "$1"; }
 
-# all of the files to be included in bash
-config_files=$(find $CONFIG_DIR -iname "*.bash")
-path_files=$(find $CONFIG_DIR -path "*/path.bash")
-completion_files=$(find $CONFIG_DIR -path "*/completion.bash")
+# initial setup
+__load_file "$BASH_CONFIG_DIR/setup.bash"
 
-#  Get all *.bash except path / completion files
-non_path_comp_files=($(echo ${config_files[@]} ${completion_files[@]} | tr ' ' '\n' | sort | uniq -u ))
-non_path_comp_files=($(echo ${non_path_comp_files[@]} ${path_files[@]} | tr ' ' '\n' | sort | uniq -u ))
+# setup path
+__load_file "$BASH_CONFIG_DIR/path.bash"
 
-# load the path files
-for file in ${path_files}
-do
-  source $file
-done
+# setup environment variables
+__load_file "$BASH_CONFIG_DIR/env.bash"
 
-# load everything but the path and completion files
-for file in ${non_path_comp_files[@]}
-do
-  source $file
-done
+# setup any user defined functions
+__load_file "$BASH_CONFIG_DIR/functions.bash"
 
-## initialize autocomplete here, otherwise functions won't be loaded
-#autoload -U compinit
-#compinit
+# add any other configuration
+__load_file "$BASH_CONFIG_DIR/config.bash"
 
-# load every completion after autocomplete loads
-for file in ${completion_files}
-do
-  source $file
-done
+# space to add completion scripts
+__load_file "$BASH_CONFIG_DIR/completion.bash"
 
-#Local environment variables in ~/.localrc 
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
+# setup aliases
+__load_file "$BASH_CONFIG_DIR/aliases.bash"
 
-unset config_files
+unset BASH_CONFIG_DIR
