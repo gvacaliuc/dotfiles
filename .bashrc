@@ -13,6 +13,9 @@ __load_file "$BASH_CONFIG_DIR/setup.bash"
 # setup path
 __load_file "$BASH_CONFIG_DIR/path.bash"
 
+# grab local settings
+__load_file "$HOME/.localrc"
+
 # setup environment variables
 __load_file "$BASH_CONFIG_DIR/env.bash"
 
