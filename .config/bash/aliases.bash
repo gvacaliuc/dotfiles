@@ -54,3 +54,6 @@ alias ag='ansible-galaxy'
 
 # To initialize nvm, since its rather slow on startup.
 alias nvminit='. "$NVM_DIR/nvm.sh"'
+
+# IDEA
+alias idea='idea.sh'
