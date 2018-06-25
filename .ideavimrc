@@ -1,0 +1,42 @@
+"Set Leader to Space
+let mapleader = " "
+
+set smartcase "Search Case-Sensitive only if caps involved
+set hlsearch "Highligts search terms
+set incsearch "Shows search terms as I type
+
+"Maps ; -> : in normal mode
+nmap ; :
+
+"Vim Key-Bindings {{{
+
+"Entering / Exiting Insert Mode
+"From https://news.ycombinator.com/item?id=13100718
+"during insert, kj escapes, `^ is so that the cursor doesn't move
+imap kj <ESC>`^
+
+"jk enters insert mode
+nmap JK i
+
+"Tab
+:nmap <Tab> >>
+:imap <Tab> <C-T>
+:vmap <Tab> >
+
+"Untab
+:nmap <S-Tab> <<
+:imap <S-Tab> <C-D>
+:vmap <S-Tab> <
+
+"Nerd Tree Setup
+:map <C-S-n> :NERDTreeToggle<CR>
+
+"Moving between buffers
+:nmap <C-Right> :bnext<CR>
+:nmap <C-Left> :bprevious<CR>
+:nmap <C-l> :bnext<CR>
+:nmap <C-h> :bprev<CR>
+
+"Clipboard paste
+:nmap pa :r!xclip -selection clipboard -o<CR>
+:map <leader>c :w !xclip -selection clipboard<CR><CR>
