@@ -5,8 +5,8 @@
 "set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
 
-" let Vundle manage Vundle, required
-Plug 'VundleVim/Vundle.vim'
+"Syntax highlighting / indentation
+Plug 'sheerun/vim-polyglot'
 
 " Fuzzy File Search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -16,9 +16,6 @@ Plug 'jiangmiao/auto-pairs'
 
 "Commenting
 Plug 'scrooloose/nerdcommenter'
-
-"Markdown Support
-Plug 'godlygeek/tabular'
 
 "Theme / Powerline
 Plug 'vim-airline/vim-airline'
@@ -48,6 +45,15 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
+
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" Bind multiple commands to tab
+Plug 'ervandew/supertab'
 
 call plug#end()            " required
 filetype plugin indent on    " required
