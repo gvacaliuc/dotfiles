@@ -11,4 +11,5 @@ export EDITOR=vim
 
 #   Set drone configurations
 export DRONE_SERVER=https://drone.flamingpigeon.co
-export DRONE_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0IjoiZ3ZhY2FsaXVjIiwidHlwZSI6InVzZXIifQ.Fidlw271yhFXDP5J4xbXk7rOOH3GZui9My-br2ZDazQ
+DRONE_TOKEN_FILE="$HOME/.drone/$DRONE_SERVER/token"
+export DRONE_TOKEN=$(cat $DRONE_TOKEN_FILE 2>/dev/null || echo "")

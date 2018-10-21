@@ -56,4 +56,9 @@ alias ag='ansible-galaxy'
 alias nvminit='. "$NVM_DIR/nvm.sh"'
 
 # IDEA
-alias idea='idea.sh'
+alias idea='idea.sh > /dev/null 2>>/tmp/idea-errors.txt'
+
+alias newpass='cat /dev/urandom | base64 | head -c10'
+
+# eclipse
+alias eclipse='SWT_GTK3=0 ~/eclipse/java-photon/eclipse/eclipse'
