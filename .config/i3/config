@@ -182,7 +182,7 @@ exec --no-startup-id stty -ixon
 bindsym $mod+x move workspace to output right
 #bindsym $mod+x+Left move workspace to output left
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 #   screenshots
 bindsym --release Shift+Print exec "scrot -s /tmp/foo.png -e 'xclip -selection clipboard -t image/png -i /tmp/foo.png'"
@@ -192,8 +192,8 @@ bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet
 
 exec --no-startup-id feh --bg-fill ~/.background.jpg
 
-bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play"
-bindsym XF86AudioPause exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause"
+#bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play"
+#bindsym XF86AudioPause exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause"
 
 #   Screen Brightness up / down
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 -time 200 -steps 20"
