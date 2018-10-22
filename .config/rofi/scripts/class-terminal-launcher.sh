@@ -1,6 +1,4 @@
-#!/bin/bash
-
-source ~/.localrc
+#!/usr/bin/env bash
 
 if [ -z $@ ]
 then
@@ -16,8 +14,7 @@ function get_classes()
     cat ~/.launchdirs | xargs -I{} find {} \
         -mindepth 1 \
         -maxdepth 1 \
-        -type d #\
-        #-exec basename {} \;
+        -type d
 }
 
 get_classes
