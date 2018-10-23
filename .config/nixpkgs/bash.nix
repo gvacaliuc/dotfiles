@@ -41,7 +41,7 @@
       # git-dir for the dotfile git bare repo
       DOTFILE_GIT_DIR="$HOME/.dotfiles"
       function config() {
-        git --git-dir=$DOTFILE_GIT_DIR --work-tree=$HOME $@
+        git --git-dir="$DOTFILE_GIT_DIR" --work-tree="$HOME" "$@"
       }
 
       # jupyter stuff

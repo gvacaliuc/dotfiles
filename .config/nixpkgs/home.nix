@@ -4,7 +4,6 @@
 
   imports = [
     ./vim.nix
-    ./git.nix
     ./bash.nix
   ];
 
