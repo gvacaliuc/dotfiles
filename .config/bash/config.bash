@@ -12,6 +12,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # set up virtualenv wrapper
 export WORKON_HOME="~/.virtualenvs"
-source virtualenvwrapper.sh
+#source virtualenvwrapper.sh
 
 eval "$(basher init -)"

@@ -6,9 +6,6 @@ then
   alias git=$hub_path
 fi
 
-# setup config alias for git bare dotfiles repo
-alias config='git --git-dir=$DOTFILE_GIT_DIR --work-tree=$HOME'
-
 # The rest of my fun git aliases
 alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -40,7 +37,9 @@ alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert="notify-send --urgency=low -i \"$([ $? = 0 ] && echo terminal || echo error)\" \"$(history|tail -n1|sed -e 's/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//')"
+function alert() {
+    notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e 's/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//')"
+}
 
 #  TODO add to i3 aliases
 alias tohdmi2='i3-msg move workspace to output HDMI2'
