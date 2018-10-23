@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+FILENAME="$@"
+DIRNAME=$(dirname "$FILENAME")
+
+echo "$FILENAME" | xargs \
+    -I{} \
+    basename "{}" | sed \
+    -e 's/,//g' \
+    -e 's/[_ ]\+/-/g' \
+    -e 's/\(.*\)/\L\1/' \
+    -e 's/(.*)//' | xargs -I{} \
+    echo "{}" | xargs -I{} mv \
+     "$FILENAME" "$DIRNAME"/{}

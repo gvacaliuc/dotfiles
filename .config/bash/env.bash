@@ -13,3 +13,4 @@ export EDITOR=vim
 export DRONE_SERVER=https://drone.flamingpigeon.co
 DRONE_TOKEN_FILE="$HOME/.drone/$DRONE_SERVER/token"
 export DRONE_TOKEN=$(cat $DRONE_TOKEN_FILE 2>/dev/null || echo "")
+export TERMINAL=$(which gnome-terminal || echo "")
