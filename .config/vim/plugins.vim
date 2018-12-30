@@ -8,6 +8,8 @@ call plug#begin()
 "Syntax highlighting / indentation
 Plug 'sheerun/vim-polyglot'
 
+Plug 'chikamichi/mediawiki.vim'
+
 " Fuzzy File Search
 Plug 'ctrlpvim/ctrlp.vim'
 

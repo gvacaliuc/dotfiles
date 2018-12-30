@@ -33,8 +33,10 @@
 
       # folder to organize my bashrc
       export BASH_CONFIG_DIR="$HOME/.config/bash"
-      [ -s $BASH_CONFIG_DIR/prompt.bash ] && source $BASH_CONFIG_DIR/prompt.bash
       function __load_file { [ -s "$1" ] && source "$1"; }
+      __load_file "$BASH_CONFIG_DIR/prompt.bash"
+
+      # ENVIRONMENT VARIABLES
 
       TERMINAL="$(which gnome-terminal || echo \"\")"
 
@@ -55,7 +57,11 @@
       DRONE_TOKEN_FILE="$HOME/.drone/$DRONE_SERVER/token"
       DRONE_TOKEN="$(cat $DRONE_TOKEN_FILE 2>/dev/null || echo \"\")"
 
-      # setup path
+      # setup graphviz 
+      GRAPHVIZ_DOT="$(which dot || echo \"\")"
+
+      # PATH SETUP
+
       export PATH="$PATH:$HOME/bin/"
       export GOPATH="$HOME/go"
       export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"

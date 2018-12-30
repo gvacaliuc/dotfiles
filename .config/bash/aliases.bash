@@ -16,6 +16,7 @@ alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
 
 alias gc='git commit'
 alias gca='git commit -a'
+alias gcm='git commit -m'
 alias gco='git checkout'
 alias gcb='git copy-branch-name'
 alias gb='git branch'
@@ -61,3 +62,15 @@ alias newpass='cat /dev/urandom | base64 | head -c10'
 
 # eclipse
 alias eclipse='SWT_GTK3=0 ~/eclipse/java-photon/eclipse/eclipse'
+
+# fuck typos
+alias dc='cd'
+
+# get jupyter token
+alias jtoken='docker-compose logs jupyter | grep -oe "[a-z0-9]\{48\}" | tail -n1'
+
+# temporary
+alias pdflatex='docker run --rm -it -v $(pwd):/build --workdir /build jupyter/scipy-notebook pdflatex'
+
+# temporary
+alias gb-serve='nix-shell -p nodejs-10_x --run "npm install gitbook-cli && npx gitbook install && npx gitbook serve"'

@@ -146,7 +146,8 @@ bar {
 exec --no-startup-id nm-applet
 
 #   Enable Blueman Applet on startup
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
+bindsym $mod+Shift+b exec i3-sensible-terminal -- bluetoothctl
 
 #   Enable Natural Scrolling
 exec --no-startup-id synclient VertScrollDelta=-50
@@ -190,15 +191,14 @@ bindsym --release Print exec "scrot /tmp/foo.png"
 
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
 
-exec --no-startup-id feh --bg-fill ~/.background.jpg
+#exec --no-startup-id feh --bg-fill ~/.background.jpg
 
 #bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play"
 #bindsym XF86AudioPause exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause"
 
-#   Screen Brightness up / down
+   #Screen Brightness up / down
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 -time 200 -steps 20"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10 -time 200 -steps 20"
-#   Finer controls
+   #Finer controls
 bindsym Shift+XF86MonBrightnessDown exec "xbacklight -dec 2 -time 40 -steps 20"
 bindsym Shift+XF86MonBrightnessUp exec "xbacklight -inc 2 -time 40 -steps 20"
-

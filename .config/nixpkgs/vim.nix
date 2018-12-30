@@ -69,6 +69,8 @@
       let g:ycm_autoclose_preview_window_after_completion=1
       let g:ycm_key_list_select_completion=["<tab>"]
       let g:ycm_key_list_previous_completion=["<S-tab>"]
+      let g:ycm_rust_src_path = '/home/gvacaliuc/.vim/plugged/YouCompleteMe/rust-src/rust-1.29.0/src'
+      let g:ycm_max_diagnostics_to_display = 10000
       "}}} End YCM Setup 
       
       "Begin Session Setup {{{
@@ -78,8 +80,8 @@
       "}}} End Session Setup
       
       "Latex Live Preview Setup {{{
-      let g:livepreview_previewer = 'evince'
-      let g:livepreview_engine = 'pdflatex' . ' -halt-on-error' . ' -shell-escape'
+      let g:livepreview_previewer = 'zathura'
+      let g:livepreview_engine = 'arara'
       "}}} End Latex Live Preview Setup
       
       "CTRLP {{{

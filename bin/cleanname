@@ -9,6 +9,11 @@ echo "$FILENAME" | xargs \
     -e 's/,//g' \
     -e 's/[_ ]\+/-/g' \
     -e 's/\(.*\)/\L\1/' \
-    -e 's/(.*)//' | xargs -I{} \
+    -e 's/&amp;//g' \
+    -e 's/&//g' \
+    -e 's/-\+/-/g' \
+    -e 's/-?\[.*\]//g' \
+    -e 's/(.*)//' \
+    -e 's/-\././'| xargs -I{} \
     echo "{}" | xargs -I{} mv \
-     "$FILENAME" "$DIRNAME"/{}
+    "$DIRNAME"/"$FILENAME" "$DIRNAME"/{}
