@@ -146,8 +146,7 @@ bar {
 exec --no-startup-id nm-applet
 
 #   Enable Blueman Applet on startup
-#exec --no-startup-id blueman-applet
-bindsym $mod+Shift+b exec i3-sensible-terminal -- bluetoothctl
+exec --no-startup-id blueman-applet
 
 #   Enable Natural Scrolling
 exec --no-startup-id synclient VertScrollDelta=-50
