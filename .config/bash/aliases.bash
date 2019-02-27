@@ -70,7 +70,4 @@ alias dc='cd'
 alias jtoken='docker-compose logs jupyter | grep -oe "[a-z0-9]\{48\}" | tail -n1'
 
 # temporary
-alias pdflatex='docker run --rm -it -v $(pwd):/build --workdir /build jupyter/scipy-notebook pdflatex'
-
-# temporary
 alias gb-serve='nix-shell -p nodejs-10_x --run "npm install gitbook-cli && npx gitbook install && npx gitbook serve"'

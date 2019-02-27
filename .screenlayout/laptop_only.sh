@@ -7,4 +7,9 @@ xrandr --fb 2560x1440 \
     --output HDMI1 --off \
     --output DP1 --off \
     --output VIRTUAL1 --off
+
+# re-enable touchscreen and touchpad
+xinput list | grep -e "Touchscreen\s\+id" | grep -oe "id=[0-9]\+" | cut -d= -f2 | xargs xinput enable
+xinput list | grep -e "Synaptics TouchPad\s\+id" | grep -oe "id=[0-9]\+" | cut -d= -f2 | xargs xinput enable
+
 xsetwacom --set $(xinput list | grep -e "Touchscreen\s\+id" | grep -oe "id=[0-9]\+" | cut -d= -f2-) MapToOutput eDP1
