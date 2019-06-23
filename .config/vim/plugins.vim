@@ -50,12 +50,8 @@ Plug 'reedes/vim-pencil'
 
 " Track the engine.
 Plug 'SirVer/ultisnips'
-
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
-
-" Bind multiple commands to tab
-Plug 'ervandew/supertab'
 
 call plug#end()            " required
 filetype plugin indent on    " required

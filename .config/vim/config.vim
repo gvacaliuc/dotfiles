@@ -63,7 +63,7 @@ let g:session_autosave = 'yes'
 
 
 "Latex Live Preview Setup {{{
-let g:livepreview_previewer = 'evince'
+let g:livepreview_previewer = 'zathura'
 let g:livepreview_engine = 'pdflatex' . ' -halt-on-error' . ' -shell-escape'
 "}}} End Latex Live Preview Setup
 
@@ -94,8 +94,8 @@ function ExpandSnippetOrCarriageReturn()
     endif
 endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-Space"
+let g:UltiSnipsJumpBackwardTrigger="<C-S-Space>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
