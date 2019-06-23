@@ -9,9 +9,10 @@ export GIT_CREDENTIAL_HELPER=~/.git_credentials
 
 export EDITOR=vim
 
-#   Set drone configurations
-export DRONE_SERVER=https://drone.flamingpigeon.co
-DRONE_TOKEN_FILE="$HOME/.drone/$DRONE_SERVER/token"
+# setup drone config
+#export DRONE_SERVER=https://drone.flamingpigeon.co
+export DRONE_SERVER=https://cloud.drone.io
+DRONE_TOKEN_FILE="$HOME/.drone/cloud.drone.io"
 export DRONE_TOKEN=$(cat $DRONE_TOKEN_FILE 2>/dev/null || echo "")
 export TERMINAL=$(which gnome-terminal || echo "")
 
