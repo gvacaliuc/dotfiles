@@ -1,7 +1,11 @@
 # configuration management
-function config {
-   git --git-dir="$DOTFILES" --work-tree="$HOME" $@
-}
+
+export DOTFILES="$HOME/.dotfiles"
+if [[ -d "$DOTFILES" ]] ; then
+    function config {
+       git --git-dir="$DOTFILES" --work-tree="$HOME" "$@"
+    }
+fi
 
 # set up base16 shell
 BASE16_SHELL=$HOME/.config/base16-shell/

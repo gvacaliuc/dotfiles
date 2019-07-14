@@ -71,8 +71,11 @@ alias eclipse='SWT_GTK3=0 ~/eclipse/java-photon/eclipse/eclipse'
 # fuck typos
 alias dc='cd'
 
-# get jupyter token
+# get jupyter token from compose service
 alias jtoken='docker-compose logs jupyter | grep -oe "[a-z0-9]\{48\}" | tail -n1'
 
 # temporary
 alias gb-serve='nix-shell -p nodejs-10_x --run "npm install gitbook-cli && npx gitbook install && npx gitbook serve"'
+
+# ripgrep
+alias rgh='rg --hidden'
