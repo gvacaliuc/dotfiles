@@ -24,8 +24,13 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias d='docker $*'
 alias d-c='docker-compose $*'
+
 # handy aliases that color output
-alias ls='ls --color=auto'
+if [[ "$(uname)" == "Darwin" ]] ; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
 alias grep='grep --color=auto'
 alias hgrep='grep -H'
 alias fgrep='fgrep --color=auto'
