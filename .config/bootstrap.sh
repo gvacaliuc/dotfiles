@@ -18,7 +18,7 @@ else
 fi
 
 function config {
-   git --git-dir="$DOTFILES" --work-tree="$HOME" $@
+   git --git-dir="$DOTFILES" --work-tree="$HOME" "$@"
 }
 
 if ! config checkout
