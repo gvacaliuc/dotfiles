@@ -23,4 +23,6 @@ export NVM_DIR="$HOME/.nvm"
 export WORKON_HOME="~/.virtualenvs"
 #source virtualenvwrapper.sh
 
-eval "$(basher init -)"
+if command -v basher; then
+    eval "$(basher init -)"
+fi

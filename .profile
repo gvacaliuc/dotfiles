@@ -21,9 +21,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then 
-    . "$HOME/.nix-profile/etc/profile.d/nix.sh"; 
-fi # added by Nix installer
-
-# Fixes nix's locale issues.
-export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
+[[ -f "$HOME/.config/bash/nix.bash" ]] && . "$HOME/.config/bash/nix.bash"

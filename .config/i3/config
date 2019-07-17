@@ -9,8 +9,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod mod1
 set $altmod Mod4
+#set $mod Mod4
+#set $altmod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -31,7 +33,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -191,14 +193,17 @@ bindsym --release Print exec "scrot /tmp/foo.png"
 
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
 
-#exec --no-startup-id feh --bg-fill ~/.background.jpg
+exec --no-startup-id feh --bg-fill ~/.background-image
 
 #bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play"
 #bindsym XF86AudioPause exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause"
 
    #Screen Brightness up / down
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 -time 200 -steps 20"
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10 -time 200 -steps 20"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
    #Finer controls
 bindsym Shift+XF86MonBrightnessDown exec "xbacklight -dec 2 -time 40 -steps 20"
 bindsym Shift+XF86MonBrightnessUp exec "xbacklight -inc 2 -time 40 -steps 20"
+
+exec --no-startup-id xrandr --dpi 192
+exec --no-startup-id touchctl disable

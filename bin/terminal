@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+_CWD_FILE="$XDG_RUNTIME_DIR/.cwd"
+if [[ -f "$_CWD_FILE" ]] ; then
+    exec gnome-terminal --working-directory="$(cat $_CWD_FILE)"
+else
+    exec gnome-terminal
+fi

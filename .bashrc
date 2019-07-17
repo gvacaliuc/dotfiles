@@ -10,6 +10,9 @@ function __load_file { [ -s "$1" ] && source "$1"; }
 # initial setup
 __load_file "$BASH_CONFIG_DIR/setup.bash"
 
+# setup nix package manager
+__load_file "$BASH_CONFIG_DIR/nix.bash"
+
 # setup path
 __load_file "$BASH_CONFIG_DIR/path.bash"
 
@@ -32,3 +35,11 @@ __load_file "$BASH_CONFIG_DIR/completion.bash"
 __load_file "$BASH_CONFIG_DIR/aliases.bash"
 
 unset BASH_CONFIG_DIR
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gvacaliuc/.sdkman"
+[[ -s "/home/gvacaliuc/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gvacaliuc/.sdkman/bin/sdkman-init.sh"
