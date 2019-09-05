@@ -5,7 +5,6 @@ then
 function get_classes()
 {
 
-    #   Fail if $CURRENT_SEMESTER isn't defined to an existing directory.
     if [[ ! -f ~/.launchdirs ]]
     then
         exit 1;

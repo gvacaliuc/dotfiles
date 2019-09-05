@@ -105,3 +105,7 @@ let g:UltiSnipsEditSplit="vertical"
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab 
 autocmd Filetype tex setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab 
 " }}}
+
+" go {{{
+let g:go_fmt_command = "goimports"
+" }}}
