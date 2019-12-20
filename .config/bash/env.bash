@@ -17,3 +17,4 @@ export DRONE_TOKEN=$(cat $DRONE_TOKEN_FILE 2>/dev/null || echo "")
 export TERMINAL=$(which gnome-terminal || echo "")
 
 export GRAPHVIZ_DOT=$(which dot)
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
