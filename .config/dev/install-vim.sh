@@ -2,8 +2,9 @@
 
 set -euo pipefail
 
-# install deps
-apt install -y \
+# update package archives and install vim dependencies
+apt-get update && \
+    apt-get install -yq --no-install-recommends \
     libncurses5-dev \
     libgnome2-dev \
     libgnomeui-dev \
@@ -20,11 +21,11 @@ apt install -y \
     liblua5.1-dev \
     libperl-dev \
     git \
-    curl
+    curl \
+    cmake
 
-
-# remove existing packages
-apt remove vim vim-runtime gvim
+# remove existing packages relating to vim
+apt-get remove vim vim-runtime gvim
 
 VIM_DIR=$(mktemp -d)
 VIM_VERSION="v8.1.1585"
