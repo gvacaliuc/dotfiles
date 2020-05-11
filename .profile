@@ -20,5 +20,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-[[ -f "$HOME/.config/bash/nix.bash" ]] && . "$HOME/.config/bash/nix.bash"

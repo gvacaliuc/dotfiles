@@ -43,7 +43,7 @@ bindsym $mod+d exec rofi -matching fuzzy -show run
 bindsym $mod+Tab exec rofi -matching fuzzy -show window
 bindsym $altmod+s exec "rofi -matching fuzzy -modi 'class :~/.config/rofi/scripts/class-terminal-launcher.sh' -show"
 bindsym $mod+Shift+o exec "rofi -matching fuzzy -modi 'audio output :~/.config/rofi/scripts/pactl-audio-output.sh' -show"
-bindsym $mod+p exec "rofi -matching fuzzy -modi 'passwords :~/.config/rofi/scripts/gopass.sh' -show"
+bindsym $mod+p exec "rofi -matching fuzzy -modi 'queue album :~/.config/rofi/scripts/spotify-albums.sh' -show"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -205,5 +205,5 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym Shift+XF86MonBrightnessDown exec "xbacklight -dec 2 -time 40 -steps 20"
 bindsym Shift+XF86MonBrightnessUp exec "xbacklight -inc 2 -time 40 -steps 20"
 
-exec --no-startup-id xrandr --dpi 192
+exec --no-startup-id xrandr --dpi 256
 exec --no-startup-id touchctl disable
