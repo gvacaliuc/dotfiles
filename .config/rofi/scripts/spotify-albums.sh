@@ -10,7 +10,7 @@ else
     count=0
     while [[ $(ps aux | grep [t]izonia) ]] && [ "$count" -lt "10" ]; do
         # kill the existing daemon
-        ps aux | grep [t]izonia | cut -d" " -f2 | xargs kill -9
+        ps aux | grep [t]izonia | awk '{print $2}' | xargs kill -9
         count=$((count+1))
     done
 
