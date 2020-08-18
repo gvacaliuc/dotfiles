@@ -188,8 +188,8 @@ bindsym $mod+x move workspace to output right
 for_window [class="^.*"] border pixel 2
 
 #   screenshots
-bindsym --release Shift+Print exec "scrot -s /tmp/foo.png -e 'xclip -selection clipboard -t image/png -i /tmp/foo.png'"
-bindsym --release Print exec "scrot /tmp/foo.png"
+bindsym --release Shift+Print exec "scrot -os /tmp/foo.png -e 'xclip -selection clipboard -t image/png -i /tmp/foo.png'"
+bindsym --release Print exec "scrot -o /tmp/foo.png"
 
 bindsym $mod+Shift+n exec --no-startup-id "killall nm-applet; sleep 2; nm-applet"
 
