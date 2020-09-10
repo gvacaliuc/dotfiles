@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-scrot /tmp/screenshot.png
+scrot -o /tmp/screenshot.png
 convert /tmp/screenshot.png -scale 20% -blur 2x1 -scale 500% /tmp/screenshotblur.png
 i3lock -i /tmp/screenshotblur.png

@@ -152,7 +152,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 #   Enable Natural Scrolling
-exec --no-startup-id synclient VertScrollDelta=-50
+exec --no-startup-id xinput list | grep Synaptics | grep -oe 'id=[0-9]\+' | cut -d= -f2 | xargs -I{} xinput set-prop {} 'libinput Natural Scrolling Enabled' 1
 
 #   Bind keys to suspend laptop
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -206,4 +206,3 @@ bindsym Shift+XF86MonBrightnessDown exec "xbacklight -dec 2 -time 40 -steps 20"
 bindsym Shift+XF86MonBrightnessUp exec "xbacklight -inc 2 -time 40 -steps 20"
 
 exec --no-startup-id xrandr --dpi 256
-exec --no-startup-id touchctl disable

@@ -6,11 +6,8 @@ set -euo pipefail
 apt-get update && \
     apt-get install -yq --no-install-recommends \
     libncurses5-dev \
-    libgnome2-dev \
-    libgnomeui-dev \
     libgtk2.0-dev \
     libatk1.0-dev \
-    libbonoboui2-dev \
     libcairo2-dev \
     libx11-dev \
     libxpm-dev \
@@ -22,16 +19,7 @@ apt-get update && \
     libperl-dev \
     git \
     curl \
-    cmake \
-    build-essential
-
-if [[ $release -ne "focal" ]]; then
-    apt-get install -yq --no-install-recommends \
-        libgnome2-dev \
-        libgnomeui-dev \
-        libbonoboui2-dev
-fi
-
+    cmake
 
 # remove existing packages relating to vim
 apt-get remove vim vim-runtime gvim

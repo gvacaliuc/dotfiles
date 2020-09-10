@@ -14,6 +14,10 @@ set history=100 "Remember 100 commands
 set undolevels=100 "Lots of undo levels
 set encoding=utf-8 "UTF8 encoding
 "set hidden "Allow switching from unsaved buffers!
+"set terminal title to the current open buffer name
+"https://vim.fandom.com/wiki/Automatically_set_screen_title
+set title
+set titlestring=vim,%{expand(\"%:p:h\")}/%t%(\ %M%)
 
 "   Maps ; -> : in normal mode
 nnoremap ; :
