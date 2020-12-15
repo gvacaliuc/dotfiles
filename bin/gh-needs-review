@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+export GITHUB_USERNAME=gvacaliuc
+
+gh api graphql -F owner=':owner' -F name=':repo' -f query='
+query($name: String!, $owner: String!) {
+  repository(owner: $owner, name: $name) {
+    pullRequests(states: OPEN, last: 50) {
+      nodes {
+        number url title
+        reviewRequests(first: 10) {
+          nodes {
+            requestedReviewer {
+              ... on User {
+                login
+              }
+            }
+          }
+        }
+      }
+      pageInfo {
+        startCursor
+        hasPreviousPage
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}
+' | jq '.data.repository.pullRequests.nodes | map(select(.reviewRequests.nodes | any(.requestedReviewer.login == env.GITHUB_USERNAME)))' \
+    | jq -r '.[] | "\(.url)\t\(.title)"'
