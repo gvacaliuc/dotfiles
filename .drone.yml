@@ -10,7 +10,7 @@ steps:
 - name: "checkout & install"
   image: gvacaliuc/dev:latest
   commands:
-    - .config/bootstrap.sh
-    - .config/dev/install-vim.sh
+    - bash -x .config/bootstrap.sh
+    - bash -x .config/dev/install-vim.sh
 
 ...

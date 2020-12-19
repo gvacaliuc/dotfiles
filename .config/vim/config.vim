@@ -1,9 +1,8 @@
 "Initial Customizations {{{
-
-"   Syntax Highlighting
+" Syntax Highlighting
 syntax on
 
-"   Set Leader to Space
+" Set Leader to Space
 let mapleader = " "
 
 set nowrap "Don't wrap lines
@@ -27,7 +26,6 @@ nnoremap ; :
 
 "   Add a solid line at 80 columns
 set colorcolumn=80
-
 "}}} End Initial Customizations
 
 
@@ -35,8 +33,7 @@ set colorcolumn=80
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
-"   Jedi Preview fucks up vim-airline
+" Jedi Preview fucks up vim-airline
 let g:airline_exclude_preview = 1
 "}}} End Airline Theme
 
@@ -60,25 +57,15 @@ let g:ycm_key_list_previous_completion=["<S-tab>"]
 
 "Begin Session Setup {{{
 let g:session_directory = '~/.vim/sessions'
-"   Auto-Save open session
+" Auto-Save open session
 let g:session_autosave = 'yes'
 "}}} End Session Setup
-
-
-
-"Latex Live Preview Setup {{{
-let g:livepreview_previewer = 'zathura'
-let g:livepreview_engine = 'pdflatex' . ' -halt-on-error' . ' -shell-escape'
-"}}} End Latex Live Preview Setup
-
-
 
 "CTRLP {{{
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|\.?node_modules|data|_book)$'
+let g:ctrlp_max_files = 100000
 "}}} END CTRLP 
-
-
 
 "clang-format {{{
 autocmd BufWritePre *.h,*.c,*.cpp call FormatCFamilyLanguageOnSave()
@@ -110,6 +97,6 @@ autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype tex setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab 
 " }}}
 
-" go {{{
-let g:go_fmt_command = "goimports"
-" }}}
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
+Glaive codefmt gofmt_executable="goimports"

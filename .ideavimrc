@@ -40,3 +40,6 @@ nmap JK i
 "Clipboard paste
 :nmap pa :r!xclip -selection clipboard -o<CR>
 :map <leader>c :w !xclip -selection clipboard<CR><CR>
+
+nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>

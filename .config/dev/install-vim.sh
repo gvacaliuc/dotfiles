@@ -3,14 +3,12 @@
 set -euo pipefail
 
 # update package archives and install vim dependencies
+export DEBIAN_FRONTEND=noninteractive
 apt-get update && \
     apt-get install -yq --no-install-recommends \
     libncurses5-dev \
-    libgnome2-dev \
-    libgnomeui-dev \
     libgtk2.0-dev \
     libatk1.0-dev \
-    libbonoboui2-dev \
     libcairo2-dev \
     libx11-dev \
     libxpm-dev \
@@ -23,27 +21,20 @@ apt-get update && \
     git \
     curl \
     cmake \
-    build-essential
-
-if [[ $release -ne "focal" ]]; then
-    apt-get install -yq --no-install-recommends \
-        libgnome2-dev \
-        libgnomeui-dev \
-        libbonoboui2-dev
-fi
-
+    clang \
+    make
 
 # remove existing packages relating to vim
 apt-get remove vim vim-runtime gvim
 
 VIM_DIR=$(mktemp -d)
-VIM_VERSION="v8.1.1585"
+VIM_VERSION="v8.2.2161"
 VIM_ARCHIVE_URL="https://github.com/vim/vim/archive/$VIM_VERSION.tar.gz"
 
 # get vim source
 curl -L "$VIM_ARCHIVE_URL" | tar zx --strip-components=1 -C "$VIM_DIR"
 
-PYTHON_VERSION_SHORT=$(python3 --version | cut -d" " -f2 | head -c3)
+PYTHON_VERSION_SHORT=$(python3 --version | cut -d" " -f2 | grep -o '3\.[0-9]\+')
 
 # configure and install
 cd "$VIM_DIR"
@@ -59,5 +50,5 @@ cd "$VIM_DIR"
     --enable-cscope \
     --prefix=/usr/local
 
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim81
+make VIMRUNTIMEDIR="/usr/local/share/vim/$VIM_VERSION"
 make install

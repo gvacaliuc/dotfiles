@@ -12,6 +12,8 @@ Plug 'chikamichi/mediawiki.vim'
 
 " Fuzzy File Search
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 "Paren / Quote Closing
 Plug 'jiangmiao/auto-pairs'
@@ -40,9 +42,6 @@ Plug 'tpope/vim-eunuch'
 "Paren / Tag Surrounding
 Plug 'tpope/vim-surround'
 
-" A Vim Plug for Lively Previewing LaTeX PDF Output
-Plug 'xuhdev/vim-latex-live-preview'
-
 "Writing Prose
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -56,5 +55,16 @@ Plug 'honza/vim-snippets'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Add maktaba and codefmt to the runtimepath.
+" (The latter must be installed before it can be used.)
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plug 'google/vim-glaive'
+
 call plug#end()            " required
 filetype plugin indent on    " required
+
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()

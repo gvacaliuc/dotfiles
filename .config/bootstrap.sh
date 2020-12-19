@@ -10,6 +10,7 @@ function cmd_exists {
 }
 
 cmd_exists git || echo "error: install git first"
+cmd_exists rsync || echo "error: install rsync first"
 
 if [[ -d "$DOTFILES" ]] ; then
     echo "info: using existing git dir $DOTFILES"
