@@ -29,6 +29,8 @@ apt-get remove vim vim-runtime gvim
 
 VIM_DIR=$(mktemp -d)
 VIM_VERSION="v8.2.2161"
+VIM_MAJOR=$(echo $VIM_VERSION | cut -dv -f2 | cut -d. -f1)
+VIM_MINOR=$(echo $VIM_VERSION | cut -dv -f2 | cut -d. -f2)
 VIM_ARCHIVE_URL="https://github.com/vim/vim/archive/$VIM_VERSION.tar.gz"
 
 # get vim source
@@ -50,5 +52,5 @@ cd "$VIM_DIR"
     --enable-cscope \
     --prefix=/usr/local
 
-make VIMRUNTIMEDIR="/usr/local/share/vim/$VIM_VERSION"
+make VIMRUNTIMEDIR="/usr/local/share/vim/$VIM_MAJOR$VIM_MINOR"
 make install
