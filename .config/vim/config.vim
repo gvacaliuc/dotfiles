@@ -47,11 +47,12 @@ set softtabstop=4 "Sets num. of col. for TAB"
 
 "YCM Setup {{{
 "   Enable Jedi to find virtualenvs instead of absolute python
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
 "   Close suggestion window after selection
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_key_list_select_completion=["<tab>"]
 let g:ycm_key_list_previous_completion=["<S-tab>"]
+let g:ycm_extra_conf_globlist = ['~/devel/github.com/ConsultingMD/*','~/devel/github.com/gvacaliuc/*']
 "}}} End YCM Setup 
 
 
