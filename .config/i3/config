@@ -206,3 +206,5 @@ bindsym Shift+XF86MonBrightnessDown exec "xbacklight -dec 2 -time 40 -steps 20"
 bindsym Shift+XF86MonBrightnessUp exec "xbacklight -inc 2 -time 40 -steps 20"
 
 exec --no-startup-id xrandr --dpi 256
+
+exec --no-startup-id "arbtt-capture --sample-rate=30 --logfile=/home/gvacaliuc/.arbtt/capture.log &"
