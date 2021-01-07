@@ -7,6 +7,8 @@ export BASH_CONFIG_DIR="$HOME/.config/bash"
 
 function __load_file { [ -s "$1" ] && source "$1"; }
 
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
 # initial setup
 __load_file "$BASH_CONFIG_DIR/setup.bash"
 
@@ -35,10 +37,6 @@ __load_file "$BASH_CONFIG_DIR/completion.bash"
 __load_file "$BASH_CONFIG_DIR/aliases.bash"
 
 unset BASH_CONFIG_DIR
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/gvacaliuc/.sdkman"
